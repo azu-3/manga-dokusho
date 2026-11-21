@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>MangaDokusho</title> <!-- MangaDokusho 読書家-->
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/📚" />
+    <link rel="stylesheet" href="styles.css" /> 
+    <script type="module" src="./javascript/script.js" defer></script> <!-- defer make .js files run after DOM is built -->
+    <script type="module" src="./javascript/link.js" defer></script> <!-- book info -->
+    <script type="module" src="./javascript/visual.js" defer></script> <!-- visual flair settings -->
+  </head>
+
+  <body>
+    
+    <header>  <!-- header -->
+
+      <div class="logo"> <!-- logo -->
+        <img src="https://fav.farm/📚" alt="MangaDokusho logo" width="40" height="40" />
+        <h1>MangaDokusho 読書家</h1>  <!-- MangaDokusho 読書家-->
+      </div>
+
+      <nav aria-label="Primary navigation"> <!-- nav bar -->
+        <ul>
+          <li><a href="#manga-list">Your Manga List</a></li>
+          <li><a href="#add-series-btn" id="add-series-nav">New Entry</a></li>
+          <li><a href="#about">About MangaDokusho</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main> <!-- main content -->
+      
+      <div class="manga-list-container">
+        <h2 id="manga-list">Manga List</h2>
+        <div class="button-container">
+          <button id="filter-btn" type="button">Show Completed Series</button>
+          <button id="add-series-btn" type="button">+ Add Series</button>
+        </div>
+      </div>
+
+      <ol id="series-list">
+<!--  <li>                     (list elements in .js file)
+        <div class="card">
+          <h3></h3>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </li>  -->
+      </ol>
+
+      <dialog id="add-series-dialog">
+        <form id="add-series-form">
+
+          <div> <!-- input: title -->
+            <label for="title-input">Title:</label>
+            <input id="title-input" name="title-input" type="text" required placeholder="Dragon Ball, Naruto, Bleach..." />
+          </div>
+
+          <div> <!-- input: author -->
+            <label for="author-input">Author:</label>
+            <input id="author-input" name="author-input" type="text" required placeholder="Toriyama, Kishimoto, Kubo..." />
+          </div>
+
+          <div> <!-- input: genre -->
+            <label for="genre-input">Genre:</label>
+            <input id="genre-input" name="genre-input" type="text" required placeholder="Fantasy, Action, Romance..." />
+          </div>
+
+          <div> <!-- input: status -->
+            <label for="status-input">Completed:</label>
+            <input id="status-input" name="status-input" type="checkbox" />
+          </div>
+          
+          <div class="rating-container">
+            <span class="rating-label">Book Rating:</span>
+            <fieldset class="rating-fieldset"> <!-- input: rating -->
+              <!-- <legend class="rating-input-label">Rating</legend>  -->
+              <input type="radio" id="rating-value-5" required name="rating-input" value="5">
+              <label for="rating-value-5" aria-label="5 stars">★</label>
+              <input type="radio" id="rating-value-4" required name="rating-input" value="4">
+              <label for="rating-value-4" aria-label="4 stars">★</label>
+              <input type="radio" id="rating-value-3" required name="rating-input" value="3">
+              <label for="rating-value-3" aria-label="3 stars">★</label>
+              <input type="radio" id="rating-value-2" required name="rating-input" value="2">
+              <label for="rating-value-2" aria-label="2 stars">★</label>
+              <input type="radio" id="rating-value-1" required name="rating-input" value="1">
+              <label for="rating-value-1" aria-label="1 star">★</label>
+            </fieldset>
+          </div>
+          <fieldset class="cover-image-fieldset">  <!-- input: cover image -->
+            <legend>Cover Image</legend>
+            <div class="cover-image-input">
+              <label for="cover-image-url-input">Image URL:</label>
+              <input id="cover-image-url-input" name="cover-image-url-input" type="url" placeholder="Paste cover image URL" />
+            </div>
+            <p class="cover-image-divider">OR</p>
+            <div class="cover-image-input">
+              <label for="cover-image-file-input">Upload Image:</label>
+              <input id="cover-image-file-input" name="cover-image-file-input" type="file" accept="image/*" />
+            </div>
+          </fieldset>
+
+          <button type="submit">Add to List</button>
+
+        </form>
+      </dialog>
+
+    </main>
+
+    <footer> <!-- footer -->
+      <p>© 2026 MangaDokusho. All rights reserved.</p>
+      <small>Last updated: November 21, 2026</small>
+    </footer>
+    
+  </body>
+
+</html>
